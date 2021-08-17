@@ -35,7 +35,7 @@ const App = () => {
     const teams_string = localStorage.getItem("teams");
     let data = {
       _data: (data_string ? JSON.parse(data_string) : []),
-      teams: (json_string ? JSON.parse(teams_string) : [])
+      teams: (teams_string ? JSON.parse(teams_string) : [])
     };
     dispatch({ type: 'RETRIEVE_DATA', d: data})
   },[]);
