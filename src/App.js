@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import './App.css';
 import { useSelector, useDispatch } from 'react-redux';
 import { Card } from "./Card";
+import { _data } from './data';
 
 const App = () => {
 
@@ -34,8 +35,8 @@ const App = () => {
     const data_string = localStorage.getItem("data");
     const teams_string = localStorage.getItem("teams");
     let data = {
-      _data: (data_string ? JSON.parse(data_string) : []),
-      teams: (teams_string ? JSON.parse(teams_string) : [])
+      _data: (data_string ? JSON.parse(data_string) : _data),
+      teams: (teams_string ? JSON.parse(teams_string) : {})
     };
     dispatch({ type: 'RETRIEVE_DATA', d: data})
   },[]);
